@@ -103,7 +103,6 @@ select {
 }
 
 .infoButtonPlaying {
-  /* width: 35%; */
   margin: 10px auto;
   padding: 7px 12px;
   position: relative;
@@ -114,7 +113,7 @@ select {
   background-color: transparent;
   font-family: 'Poppins', sans-serif;
   background-image: url('./assets/soundBars.gif');
-  background-size: 50px;
+  background-size: 30px;
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;

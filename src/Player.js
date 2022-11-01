@@ -4,12 +4,16 @@ import '../src/Radio.css';
 
 
 const Player = (props) => {
+
+  console.log(props.audioSource)
+
     return (
       <div className='radioPlayer'>
         <AudioPlayer
           autoPlay 
           layout="horizontal-reverse"
           showJumpControls = {false}
+          // customControlsSection = {[]}
           src={props.audioSource}/>  
       </div>
     )
