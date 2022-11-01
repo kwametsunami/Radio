@@ -19,8 +19,6 @@ const Stations = (props) => {
         };
 
         fetch(`https://radio-browser.p.rapidapi.com/json/stations/search?bitrateMin=192&tag=${props.genre}&order=votes&reverse=true&offset=0&limit=36&hidebroken=false`, options)
-            // ${ props.genre }
-            // countrycode=ca&tag=jazz
             .then(response => response.json(), console.log("heyyyyy"))
             .then(info => {
                 console.log(info)
