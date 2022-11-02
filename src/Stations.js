@@ -7,7 +7,6 @@ const Stations = (props) => {
 
     const [allStations, setAllStations] = useState([])
     const [apiError, setApiError] = useState(false)
-    const [currentStation, setCurrentStation] = useState({})
 
     useEffect(() => {
         const options = {
@@ -102,7 +101,7 @@ const Stations = (props) => {
 
             {
                 radioUrl
-                ? <Player audioSource={radioUrl} radioInfo={currentStation}/>
+                ? <Player audioSource={radioUrl} />
                 : null
             }
             
