@@ -31,7 +31,6 @@ const Stations = (props) => {
                 setApiError(!apiError)
             });
     }, [props.genre])
-    let radioStation = allStations
 
     const [radioUrl, setRadioUrl] = useState('')
     
@@ -60,6 +59,7 @@ const Stations = (props) => {
                 : <div className='stationList wrapper'>
                         {allStations.map((stationDetails) => {
                             return (
+
                                 <div className={radioUrl === stationDetails.url_resolved
                                     ? "stationInfoPlaying"
                                     : "stationInfo"
@@ -67,6 +67,7 @@ const Stations = (props) => {
                                     <div className="image">
                                         <img className="icon" src={stationDetails.favicon} alt={stationDetails.name} onError={setDefaultSrc} />
                                     </div>
+
                                     <div className='information'>
                                         <p className='stationName'>{stationDetails.name}</p>
                                         {
@@ -75,6 +76,7 @@ const Stations = (props) => {
                                                 : <p className='stationCountry'>Country not listed</p>
                                         }
                                     </div>
+
                                     <div className='buttonContainer' value={stationDetails}>
                                         <button
                                             className={
