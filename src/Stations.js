@@ -19,17 +19,13 @@ const Stations = (props) => {
         };
 
         fetch(`https://radio-browser.p.rapidapi.com/json/stations/search?bitrateMin=192&tag=${props.genre}&order=votes&reverse=true&offset=0&limit=36&hidebroken=false`, options)
-            .then(response => response.json(), console.log("heyyyyy"))
-            .then(info => {
-                
+            .then(response => response.json())
+            .then(info => {        
                 if (Array.isArray(info)){
                     setAllStations(info) 
                 } else {
                     setApiError(!apiError)
-                    console.log("this is an error")
                 }
-
-                console.log(info)
             })
             .catch((error) => {
                 setApiError(!apiError)

@@ -7,7 +7,6 @@ const Genre = () => {
 
     const handleUserChoice = (event) => {
         setUserChoice(event.target.value)
-        // console.log(userChoice)
     }
 
     return (
