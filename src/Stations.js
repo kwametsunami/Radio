@@ -29,7 +29,7 @@ const Stations = (props) => {
             .catch((error) => {
                 setApiError(!apiError)
             });
-    }, [props.genre])
+    }, [props.genre, apiError])
 
     const [radioUrl, setRadioUrl] = useState('')
     
