@@ -48,9 +48,11 @@ p {
 }
 
 select {
-  width: 10vw;
+  width: 20%;
   padding: 15px;
   font-size: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
 }
 
 .stationContainer {
@@ -101,6 +103,7 @@ select {
 
 .image {
   width: 25%;
+  margin: 0 15px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -172,6 +175,131 @@ select {
 .radioPlayer {
   position: fixed;
   bottom: 2%;
-  left: 20vw;
-  width: 60%;
+  left: 30vw;
+  width: 40%;
+}
+
+@media (max-width: 1250px) {
+  .stationInfo, .stationInfoPlaying {
+    width: calc((100%/2) - 35px)
+  }
+}
+
+@media (max-width: 850px) {
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  .stationContainer h2 {
+    font-size: 1rem;
+  }
+
+  .image img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .infoButton, .infoButtonPlaying {
+    width: 45px;
+    height: 45px;
+    border: 3px solid #1e2021; 
+  }
+
+  select {
+    padding: 7.5px;
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .infoButton, .infoButtonPlaying {
+      width: 30px;
+      height: 30px;
+      font-size: 1rem;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+}
+
+@media (max-width: 650px) {
+
+  select {
+    font-size: 0.7rem;
+    padding: 15px;
+    width: 25%;
+  }
+
+  p {
+    font-size: 0.5rem;
+  }
+
+  .stationList {
+    justify-content: center;
+  }
+
+  .stationInfo, .stationInfoPlaying {
+      width: 75%;
+    }
+
+  .image img {
+    width: 30px;
+    height: 30px;
+  }
+
+    .infoButton, .infoButtonPlaying {
+      font-size: .75rem;
+      padding: 5px;
+      margin: 15px;
+      border: 3px solid #1e2021;
+    }
+
+  .infoButtonPlaying {
+    background-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  select {
+    width: 35%;
+    font-size: 0.5rem;
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 0.75rem;
+  }
+
+  .stationContainer h2 {
+    font-size: 0.5rem;
+  }
+
+  .infoButton, .infoButtonPlaying {
+    padding: 5px;
+    margin: 15px;
+    border: none;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  .stationInfo, .stationInfoPlaying {
+      width: 90%;
+    }
 }

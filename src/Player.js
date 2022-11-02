@@ -11,9 +11,6 @@ const Player = (props) => {
 
     return (
       <section className='radio'>
-        <div className='radioInfo'>
-          <p>Now playing:</p>
-        </div>
         <div className='radioPlayer'>
           <AudioPlayer
             autoPlay 

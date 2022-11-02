@@ -1,6 +1,7 @@
 import './App.css';
 import Genre from './Genre';
 
+
 function App() {
 
   return (
