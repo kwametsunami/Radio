@@ -300,3 +300,6 @@ export default Player;
 
 
 
+                                                radioUrl === stationDetails.url_resolved
+                                                ? "infoButtonPlaying"
+                                                : "infoButton"
