@@ -7,7 +7,7 @@ const Stations = (props) => {
 
     const [allStations, setAllStations] = useState([])
     const [apiError, setApiError] = useState(false)
-    console.log(props.genre)
+    const [currentStation, setCurrentStation] = useState({})
 
     useEffect(() => {
         const options = {
@@ -38,6 +38,7 @@ const Stations = (props) => {
     let radioStation = allStations
 
     const [radioUrl, setRadioUrl] = useState('')
+    
     const radioSelect = (event) => {
         event.preventDefault()
         setRadioUrl(event.target.value)
@@ -46,34 +47,42 @@ const Stations = (props) => {
     const setDefaultSrc = (event) => {
         event.target.src = defaultImage
     }
+
     return (
         <section className='stationContainer wrapper'>
             {
                 apiError
-                    ? <h2>Please try again later</h2>
-                    : <h2>Select a station</h2>
+                    ? <h2>Oh no! We're having an issue. Please try again later.</h2>
+                    : <h2>Choose a station</h2>
             }
             {
                 apiError
-                ? ''
+                ? <div>
+                    <h3>The server is currently overloaded with requests. In the meantime, here's some music to enjoy.</h3>
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pxw-5qfJ1dk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> 
                 : <div className='stationList wrapper'>
                         {allStations.map((stationDetails) => {
                             return (
-                                <div className="stationInfo" key={stationDetails.id}>
+                                <div className={radioUrl === stationDetails.url_resolved
+                                    ? "stationInfoPlaying"
+                                    : "stationInfo"
+                                } key={stationDetails.id}>
                                     <div className="image">
                                         <img className="icon" src={stationDetails.favicon} alt={stationDetails.name} onError={setDefaultSrc} />
                                     </div>
                                     <div className='information'>
-                                        <p>{stationDetails.name}</p>
+                                        <p className='stationName'>{stationDetails.name}</p>
                                         {
                                             stationDetails.country
-                                                ? <p>{stationDetails.country}</p>
-                                                : <p>Country not listed</p>
+                                                ? <p className='stationCountry'>{stationDetails.country}</p>
+                                                : <p className='stationCountry'>Country not listed</p>
                                         }
                                     </div>
-                                    <div className='buttonContainer'>
+                                    <div className='buttonContainer' value={stationDetails}>
                                         <button
-                                            className={radioUrl === stationDetails.url_resolved
+                                            className={
+                                                radioUrl === stationDetails.url_resolved
                                                 ? "infoButtonPlaying"
                                                 : "infoButton"
                                             }
@@ -84,6 +93,7 @@ const Stations = (props) => {
                                                     ? ""
                                                     : "▶"
                                             }
+
                                         </button>
                                     </div>
                                 </div>
@@ -91,10 +101,10 @@ const Stations = (props) => {
                         })}
                     </div>
             }
-            
+
             {
                 radioUrl
-                ? <Player audioSource={radioUrl} />
+                ? <Player audioSource={radioUrl} radioInfo={currentStation}/>
                 : null
             }
             

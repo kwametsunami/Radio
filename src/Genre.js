@@ -11,9 +11,9 @@ const Genre = () => {
     }
 
     return (
-        <section>
+        <section className='genreContainer'>
             <form>
-                <h2>Choose a genre</h2>
+                <h2>Select a genre</h2>
                 <select name="genreSelector" id="genreSelector" onChange={handleUserChoice} value={userChoice} defaultValue={""}>
                     <option value="" disabled>Genre</option>
                     <option value="pop">Pop</option>
