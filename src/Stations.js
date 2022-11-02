@@ -46,7 +46,7 @@ const Stations = (props) => {
         <section className='stationContainer wrapper'>
             {
                 apiError
-                    ? <h2>Oh no! We're having an issue. Please try again later.</h2>
+                    ? <h2>Oh no! We're having an issue. Please refresh, then try again later.</h2>
                     : <h2>Choose a station</h2>
             }
             {
