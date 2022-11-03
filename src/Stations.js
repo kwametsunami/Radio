@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import Player from './Player'
+
 import defaultImage from "./assets/radio.png"
 
 const Stations = (props) => {
@@ -101,7 +102,7 @@ const Stations = (props) => {
 
             {
                 radioUrl
-                ? <Player audioSource={radioUrl} />
+                ? <Player audioSource={radioUrl}/>
                 : null
             }
             

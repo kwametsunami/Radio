@@ -6,7 +6,7 @@ import '../src/Radio.css';
 const Player = (props) => {
 
   const setDefaultAlert = () => {
-    alert("Station region locked. Please select another stream.")
+    alert("Sorry, this station is offline or unavailable in your region. Please select another stream.")
   }
 
     return (
@@ -17,7 +17,7 @@ const Player = (props) => {
             layout="horizontal-reverse"
             showJumpControls = {false}
             onError = {setDefaultAlert}
-            src={props.audioSource}/>  
+            src={props.audioSource}/>
         </div>
       </section>
     )
